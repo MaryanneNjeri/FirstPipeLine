@@ -4,17 +4,10 @@
 trigger:
 - master
 
-strategy:
-  matrix:
-    linux:
-      imageName: "ubuntu-16.04"
-   
-    windows:
-      imageName: "vs2017-win2016"
-  maxParallel: 2
+
 
 pool:
-  vmImage: $(imageName)
+  vmImage: ' ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
@@ -26,7 +19,7 @@ steps:
   inputs:
     azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
     ConfigstoreName: 'TestAppConfigAspTutorial'
-    ConfigurationFile: 'Anne56njeri/FirstPipeLine / azure-pipelines.yml'
+    ConfigurationFile: 'Anne56njeri/FirstPipeLine /config.json'
     Separator: ':'
     Strict: false
   
