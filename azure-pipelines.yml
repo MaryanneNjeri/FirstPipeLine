@@ -1,6 +1,7 @@
 # ASP.NET Core
 
 
+
 trigger:
 - master
 
@@ -15,3 +16,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: AzureAppConfigurationPush@1
+  inputs:
+    azureSubscription: 'Leap-Dev-Vendor shared sub(27ecc5df-75fd-470a-8215-794d8e807911)'
+    ConfigstoreName: 'TestAppConfigAspTutorial'
+    ConfigurationFile: 'config.json'
+    Separator: ':'
+    Strict: false
