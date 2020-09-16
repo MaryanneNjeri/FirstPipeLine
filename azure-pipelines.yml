@@ -22,10 +22,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: AzureAppConfigurationPush@1
+- task: AzureWebApp@1
   inputs:
     azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
-    ConfigstoreName: 'TestAppConfigAspTutorial'
-    ConfigurationFile: EditableOptions
-    Separator: ':'
-    Strict: EditableOptions
+    appName: 'FirstPipeLine'
+    package:  $(System.DefaultWorkingDirectory)/**/*.zip 
+
+  
