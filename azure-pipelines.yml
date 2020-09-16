@@ -22,4 +22,3 @@ steps:
     ConfigurationFile: 'config.json'
     Separator: ':'
     Strict: false
-  
