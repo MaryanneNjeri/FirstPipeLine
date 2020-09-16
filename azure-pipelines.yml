@@ -22,10 +22,11 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: AzureWebApp@1
+- task: AzureAppConfigurationPush@1
   inputs:
     azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
-    appName: 'FirstPipeLine'
-    package:  $(System.DefaultWorkingDirectory)/**/*.zip 
-
+    ConfigstoreName: 'TestAppConfigAspTutorial'
+    ConfigurationFile: 'Anne56njeri/FirstPipeLine / azure-pipelines.yml'
+    Separator: ':'
+    Strict: false
   
