@@ -4,7 +4,7 @@
     azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
     ConfigstoreName: 'TestAppConfigAspTutorial'
     ConfigurationFile: 'Anne56njeri/FirstPipeLine / azure-pipelines.yml'
-    Separator: '/'
+    
     Strict: false
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
