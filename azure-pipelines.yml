@@ -7,7 +7,7 @@ trigger:
 
 
 pool:
-  vmImage: ' ubuntu-latest'
+  vmImage: "ubuntu-16.04"
 
 variables:
   buildConfiguration: 'Release'
@@ -19,7 +19,7 @@ steps:
   inputs:
     azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
     ConfigstoreName: 'TestAppConfigAspTutorial'
-    ConfigurationFile: 'Anne56njeri/FirstPipeLine /config.json'
+    ConfigurationFile: 'Anne56njeri/FirstPipeLine/config.json'
     Separator: ':'
     Strict: false
   
