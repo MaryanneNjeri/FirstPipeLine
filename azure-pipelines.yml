@@ -1,11 +1,5 @@
 # ASP.NET Core
-- task: AzureAppConfigurationPush@1
-  inputs:
-    azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
-    ConfigstoreName: 'TestAppConfigAspTutorial'
-    ConfigurationFile: 'azure-pipelines.yml'
-    
-    Strict: false
+
 
 trigger:
 - master
@@ -14,7 +8,7 @@ strategy:
   matrix:
     linux:
       imageName: "ubuntu-16.04"
-    
+   
     windows:
       imageName: "vs2017-win2016"
   maxParallel: 2
@@ -28,3 +22,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: AzureAppConfigurationPush@1
+  inputs:
+    azureSubscription: 'Leap-Dev-Vendor shared sub(1)(27ecc5df-75fd-470a-8215-794d8e807911)'
+    ConfigstoreName: 'TestAppConfigAspTutorial'
+    ConfigurationFile: EditableOptions
+    Separator: ':'
+    Strict: EditableOptions
